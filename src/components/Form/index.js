@@ -4,16 +4,7 @@ import Dropdown from '../Dropdown'
 import Button from '../Button'
 import { useState } from 'react'
 
-const Form = () => {
-    const times = [
-        'Programação',
-        'Front-End',
-        'Data Science',
-        'Devops',
-        'UX e Design',
-        'Mobile',
-        'Inovação e Gestão'
-    ]
+const Form = (props) => {
 
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('')
@@ -22,7 +13,12 @@ const Form = () => {
 
     const onSubmit = (event) => {
         event.preventDefault();
-        console.log('Form foi submetido', nome, cargo, imagem, time);
+        props.signedEmployee({
+            nome,
+            cargo,
+            imagem,
+            time
+        });
     }
 
     return (
@@ -52,7 +48,7 @@ const Form = () => {
                 <Dropdown 
                     required={true} 
                     label="Time" 
-                    items={times}
+                    items={props.times}
                     value={time}
                     onChanged = {value => setTime(value)}
                 />
