@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Banner from './components/Banner/Banner';
+import Footer from './components/Footer';
 import Form from './components/Form';
 import Squad from './components/Squad';
 
@@ -46,7 +47,6 @@ function App() {
   const [employees, setEmployees] = useState([])
   
   const newSignedEmployee = (employee) => {
-    console.log(employee)
     setEmployees([...employees, employee])
   }
 
@@ -54,7 +54,14 @@ function App() {
     <div className="App">
       <Banner />
       <Form times={times.map(time => time.nome)} signedEmployee = {employee => newSignedEmployee(employee)}/>
-      {times.map(time=><Squad key={time.nome} nome={time.nome} corPrimaria={time.corPrimaria} corSecundaria={time.corSecundaria}/>)}
+      {times.map(time=><Squad 
+        key={time.nome} 
+        nome={time.nome} 
+        corPrimaria={time.corPrimaria} 
+        corSecundaria={time.corSecundaria}
+        employees={employees.filter(employee=> employee.time === time.nome)}
+      />)}
+      <Footer />
      </div>
   );
 }
