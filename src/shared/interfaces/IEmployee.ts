@@ -3,4 +3,5 @@ export interface IEmployee {
     cargo: string
     imagem: string
     time?: string
+    data: string
 }

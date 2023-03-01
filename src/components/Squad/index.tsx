@@ -27,6 +27,7 @@ const Squad = (props: SquadProps) => {
               cargo={employee.cargo}
               imagem={employee.imagem}
               corDeFundo={props.corPrimaria}
+              data={employee.data}
             />
           ))}
         </div>
