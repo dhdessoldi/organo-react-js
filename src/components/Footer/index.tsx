@@ -21,7 +21,7 @@ const Footer = () => {
                 </li>
             </ul>
             <img src='imagens/logo.png' alt='' />
-            <p>Desenvolvido por Alura.</p>
+            <p>Desenvolvido por Daniel.</p>
 
         </section>
     )

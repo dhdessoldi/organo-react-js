@@ -1,6 +1,13 @@
 import './Employee.css'
 
-const Employee = ({nome,imagem,cargo,corDeFundo}) => {
+interface EmployeeProps {
+    nome: string
+    cargo: string
+    imagem: string
+    corDeFundo: string
+}
+
+const Employee = ({nome,imagem,cargo,corDeFundo}: EmployeeProps) => {
     return (
         <div className='colaborador'>
             <div className='cabecalho' style={{backgroundColor:corDeFundo}}>

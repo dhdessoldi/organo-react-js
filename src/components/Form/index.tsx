@@ -3,15 +3,21 @@ import InputText from '../InputText'
 import Dropdown from '../Dropdown'
 import Button from '../Button'
 import { useState } from 'react'
+import { IEmployee } from '../../shared/interfaces/IEmployee'
 
-const Form = (props) => {
+interface FormProps {
+    signedEmployee: (employee: IEmployee) => void
+    times: string[]
+}
+
+const Form = (props: FormProps) => {
 
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('')
     const [imagem, setImagem] = useState('')
     const [time, setTime] = useState('')
 
-    const onSubmit = (event) => {
+    const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         props.signedEmployee({
             nome,
