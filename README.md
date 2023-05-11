@@ -12,7 +12,6 @@ Posteriormente pode-se remover colaboradores e times das listas criadas.
 ## Desenvolvimento
 
 O projeto foi desenvolvido utilizando React com JavaScript, inicializado com [Create React App](https://github.com/facebook/create-react-app). \
-Algumas páginas foram criadas e a navegação entre elas é realizada pelo [react-router-dom](https://reactrouter.com/en/main). \
 Os elementos das páginas foram componentizados para manter a semântica, facilitar o entendimento e a manutenção do código. \
 Este projeto foi migrado para TypeScript como parte de um curso feito posteriormente.
 
